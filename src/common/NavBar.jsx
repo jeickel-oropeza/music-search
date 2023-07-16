@@ -1,4 +1,4 @@
-import { AppBar, Box, Container, Grid, Toolbar } from "@mui/material"
+import { AppBar, Box, Container, Grid, Toolbar, Divider } from "@mui/material"
 import spotify_logo from "../assets/spotify_logo.svg"
 import logout from "../assets/logout.svg"
 import { Stack } from "@mui/system"
@@ -22,6 +22,7 @@ export const NavBar = () => {
 							<Grid item>
 								<Stack direction="row" spacing={2}>
 									<Link>Buscar</Link>
+									<Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
 									<Link>Mis albumes</Link>
 									<Link>Cerrar sesión</Link>
 									<Link>
