@@ -18,8 +18,23 @@ const theme = createTheme({
 		}
 	},
 	typography: {
-		fontFamily: globalPalette.GLOBAL_FONT
+		fontFamily: globalPalette.GLOBAL_FONT,
+		h1: {
+			fontSize: "4rem",
+			fontWeight: 700
+		}
 	},
+	components: {
+		MuiButton: {
+			defaultProps: {
+				style: {
+					textTransform: "none",
+					boxShadow: "none",
+					fontWeight: 600
+				}
+			}
+		}
+	}
 })
 
 export const ThemeConfig = ({ children }) => {
