@@ -4,6 +4,8 @@ const globalPalette = {
 	BG: "#222222",
 	YELLOW: "#D6F379",
 	RED: "#E3513D",
+	BLACK: "#000000",
+	WHITE: "#FFFFFF",
 	GLOBAL_FONT: "Montserrat, monospace"
 }
 
@@ -30,10 +32,23 @@ const theme = createTheme({
 				style: {
 					textTransform: "none",
 					boxShadow: "none",
-					fontWeight: 600
+					fontWeight: 600,
+					color: globalPalette.BLACK,
+					borderRadius: "1.5rem"
 				}
 			}
-		}
+		},
+		MuiInputBase: {
+			defaultProps: {
+				style: {
+					backgroundColor: globalPalette.WHITE,
+					color: globalPalette.BLACK,
+					fontWeight: 600,
+					fontFamily: globalPalette.GLOBAL_FONT,
+				}
+			}
+		},
+		
 	}
 })
 

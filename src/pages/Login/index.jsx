@@ -16,7 +16,7 @@ export const Login = () => {
 					<img src={arrow_login} alt="Arrow login" />
 				</Grid>
 				<Grid item>
-					<PageTitle whiteText="Disfruta de la" yellowText="mejor música" />
+					<PageTitle whiteText="Disfruta de la" yellowText="mejor música" align="left" />
 					<Typography>
 						Accede a tu cuenta para guardar tus albumes favoritos.
 					</Typography>
