@@ -21,9 +21,9 @@ export const NavBar = () => {
 							</Grid>
 							<Grid item>
 								<Stack direction="row" spacing={2}>
-									<Link>Buscar</Link>
+									<Link to="/">Buscar</Link>
 									<Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-									<Link>Mis albumes</Link>
+									<Link to="/my-albums">Mis albumes</Link>
 									<Link>Cerrar sesión</Link>
 									<Link>
 										<img src={logout} alt="Logout icon" />

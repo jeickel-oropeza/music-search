@@ -94,3 +94,16 @@ export const AddUserAlbumsRequest = async (albumIds) => {
 		console.log(error)
 	}
 }
+
+export const UserAlbumsRequest = async () => {
+	try {
+		const response = await baseRequest(
+			'get',
+			`${API_URL}/me/albums`,
+			{}
+		)
+		return response
+	} catch (error) {
+		console.log(error)
+	}
+}
