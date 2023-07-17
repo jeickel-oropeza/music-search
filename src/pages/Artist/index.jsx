@@ -42,26 +42,51 @@ export const Artist = () => {
 	return (
 		<>
 			{artistData &&
-				<Container maxWidth="lg" sx={{ mt: 9 }}>
-					<Grid container direction="row">
-						<Grid item>
-							<img src={artistData.images[0].url} alt={artistData.name} />
+				<>
+					<Container
+						maxWidth="lg"
+					>
+						<Grid
+							container
+							direction="row"
+							mt={12}
+							alignItems="center"
+							spacing={5}
+						>
+							<Grid item>
+								<img src={artistData.images[0].url} alt={artistData.name} className="image-artist" />
+							</Grid>
+							<Grid item>
+								<Typography variant="h1">
+									{artistData.name}
+								</Typography>
+								<Typography>
+									Seguidores: {artistData.followers.total}
+								</Typography>
+							</Grid>
 						</Grid>
-						<Grid item>
-							<Typography variant="h1">
-								{artistData.name}
-							</Typography>
-							<Typography>
-								Seguidores: {artistData.followers.total}
-							</Typography>
+					</Container >
+					<Container
+						maxWidth="xl"
+						direction="row"
+						alignItems="center"
+						justifyContent="flex-start"
+					>
+						<Typography mt={3}>
+							{`Guarda tus álbumes favoritos de ${artistData.name}`}
+						</Typography>
+						<Grid
+							container
+							direction="row"
+							justifyContent="center"
+							spacing={3}
+						>
+							{albumsData &&
+								<AlbumList albums={albumsData} refreshAlbumsList={setEnabledAlbumRequest} />
+							}
 						</Grid>
-					</Grid>
-					{albumsData &&
-						<Grid container>
-							<AlbumList albums={albumsData} refreshAlbumsList={setEnabledAlbumRequest} />
-						</Grid>
-					}
-				</Container >
+					</Container>
+				</>
 			}
 		</>
 	)

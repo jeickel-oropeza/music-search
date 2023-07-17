@@ -1,4 +1,4 @@
-import { Grid, Pagination, Typography } from "@mui/material"
+import { Container, Grid, Pagination, Typography } from "@mui/material"
 import { ItemList } from "../ItemList"
 import { useNavigate } from "react-router-dom"
 
@@ -16,11 +16,19 @@ export const ArtistList = ({ dataArtists, totalResult, showingItems, setOffset, 
 	}
 
 	return (
-		<Grid container direction="column">
-			<Typography>
-				{`Mostrando ${dataArtists.length} resultados de ${totalResult}`}
-			</Typography>
-			<Grid container direction="row">
+		<Grid container direction="column" mt={5}>
+			<Grid item pl={12}>
+				<Typography>
+					{`Mostrando ${dataArtists.length} resultados de ${totalResult}`}
+				</Typography>
+			</Grid>
+			<Grid
+				container
+				direction="row"
+				justifyContent="center"
+				mt={3}
+				spacing={3}
+			>
 				{dataArtists.map(artist => (
 					<ItemList
 						key={artist.id}
@@ -31,7 +39,9 @@ export const ArtistList = ({ dataArtists, totalResult, showingItems, setOffset, 
 					/>
 				))}
 			</Grid>
-			<Pagination count={countPages} color="primary" onChange={handlePaginationChange} />
+			<Grid item pl={10} mb={10}>
+				<Pagination count={countPages} color="primary" onChange={handlePaginationChange} />
+			</Grid>
 		</Grid>
 	)
 }

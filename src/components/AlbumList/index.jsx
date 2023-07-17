@@ -38,13 +38,13 @@ export const AlbumList = ({ albums, refreshAlbumsList }) => {
 	const generateButton = (savededAlbum, albumId) => {
 		if (savededAlbum === true) {
 			return (
-				<Button error onClick={() => buttonAlbumHandleClick('remove', albumId)}>
+				<Button error onClick={() => buttonAlbumHandleClick('remove', albumId)} className="remove-button">
 					Remover album
 				</Button>
 			)
 		} else {
 			return (
-				<Button onClick={() => buttonAlbumHandleClick('add', albumId)}>
+				<Button onClick={() => buttonAlbumHandleClick('add', albumId)} className="add-button">
 					Agregar album
 				</Button>
 			)
@@ -62,6 +62,7 @@ export const AlbumList = ({ albums, refreshAlbumsList }) => {
 						media={(album.images.length > 0) ? album.images[0].url : null}
 						actions={true}
 						button={() => generateButton(checkUserAlbums[index], album.id)}
+						column={3}
 					/>
 				))
 			}

@@ -26,18 +26,41 @@ export const MyAlbums = () => {
 	}, [userAlbums])
 
 	return (
-		<Container maxWidth="lg" sx={{ mt: 9 }}>
-			<Grid container direction="column">
+		<Container maxWidth="xl" sx={{
+			minHeight: "100vh",
+		}}>
+			<Grid
+				container
+				direction="column"
+				alignItems="center"
+				justifyContent="flex-start"
+				mt={12}
+			>
 				<Grid item>
 					<PageTitle whiteText="Mis albumes" yellowText="guardados" align="center" />
 				</Grid>
-				<Grid item>
-					<Typography>
+				<Grid
+					item
+					mt={3}
+					sx={{
+						width: {
+							xs: "100%",
+							md: "30%"
+						}
+					}}
+				>
+					<Typography align="center">
 						Disfruta de tu música a un solo click y descube que discos has guardado dentro de  “mis  álbumes”
 					</Typography>
 				</Grid>
 				{albumsData &&
-					<Grid container>
+					<Grid
+						container
+						direction="row"
+						justifyContent="center"
+						spacing={3}
+						mt={5}
+					>
 						<AlbumList albums={albumsData} refreshAlbumsList={setEnabledAlbumRequest} />
 					</Grid>
 				}

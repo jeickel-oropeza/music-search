@@ -51,7 +51,25 @@ const theme = createTheme({
 				}
 			}
 		},
-		
+		MuiAppBar: {
+			defaultProps: {
+				style: {
+					backgroundColor: globalPalette.BG,
+					backgroundImage: "none",
+					boxShadow: "none",
+				}
+			}
+		},
+		MuiCard: {
+			defaultProps: {
+				style: {
+					boxShadow: "none",
+					backgroundColor: globalPalette.BG,
+					backgroundImage: "none",
+					fontWeight: 600
+				}
+			}
+		}
 	}
 })
 

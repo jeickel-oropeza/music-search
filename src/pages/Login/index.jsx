@@ -9,20 +9,50 @@ export const Login = () => {
 			<Grid
 				container
 				direction="row"
-				justifyContent="space-around"
 				alignItems="center"
+				justifyContent="space-around"
+				sx={{
+					minHeight: "100vh",
+					flexDirection: {
+						xs: "column",
+						md: "row"
+					},
+					alignItems: {
+						xs: "flex-start",
+						md: "center"
+					},
+					justifyContent: {
+						xs: "center",
+						md: "space-around"
+					}
+				}}
 			>
-				<Grid item>
-					<img src={arrow_login} alt="Arrow login" />
+				<Grid
+					item
+					columns={{ xs: 12, sm: 12, md: 6, lg: 6 }}
+				>
+					<img src={arrow_login} alt="Arrow login" className="login-logo" />
 				</Grid>
-				<Grid item>
-					<PageTitle whiteText="Disfruta de la" yellowText="mejor música" align="left" />
-					<Typography>
-						Accede a tu cuenta para guardar tus albumes favoritos.
-					</Typography>
-					<a href={AUTH_URL}>
-						Log in con Spotify
-					</a>
+				<Grid
+					item
+					columns={{ xs: 12, sm: 12, md: 12, lg: 12 }}
+				>
+					<Grid item>
+						<PageTitle whiteText="Disfruta de la" yellowText="mejor música" align="left" />
+					</Grid>
+					<Grid
+						item
+						direction="column"
+						justifyContent="space-between"
+
+					>
+						<Typography>
+							Accede a tu cuenta para guardar tus albumes favoritos.
+						</Typography>
+						<a href={AUTH_URL}>
+							Log in con Spotify
+						</a>
+					</Grid>
 				</Grid>
 			</Grid>
 		</Container>
