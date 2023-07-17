@@ -1,6 +1,6 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
+import { Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
 
-export const ItemList = ({ id, title, information, media, actions = false, handleItemClick = false }) => {
+export const ItemList = ({ title, information, media, actions = false, handleItemClick = false, button }) => {
 	return (
 		<Card sx={{ maxWidth: 345 }} onClick={(handleItemClick) ? handleItemClick : undefined}>
 			<CardMedia
@@ -18,7 +18,7 @@ export const ItemList = ({ id, title, information, media, actions = false, handl
 			</CardContent>
 			{actions &&
 				<CardActions>
-					<Button size="small">Share</Button>
+					{button()}
 				</CardActions>
 			}
 		</Card>
