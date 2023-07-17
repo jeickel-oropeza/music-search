@@ -42,38 +42,47 @@ export const Home = () => {
 	}
 
 	return (
-		<Container maxWidth="lg">
+		<Container maxWidth="xl" sx={{
+			minHeight: "100vh",
+		}}>
 			<Grid
 				container
 				direction="column"
+				alignItems="center"
+				justifyContent="flex-start"
+				mt={12}
 			>
 				<Grid item>
 					<PageTitle whiteText="Busca tus" yellowText="artistas" align="center" />
 				</Grid>
-				<Grid item>
-					<Typography>
+				<Grid
+					item
+					mt={3}
+					sx={{
+						width: "40%"
+					}}
+				>
+					<Typography align="center">
 						Encuentra tus artistas favoritos gracias a nuestro buscador y guarda tus álbumes favoritos
 					</Typography>
 				</Grid>
-				<Grid item>
+				<Grid item mt={3}>
 					<SearchForm
 						handleSubmit={handleSubmit}
 						handleChange={handleInputChange}
 						buttonDisabled={!artistName}
 					/>
 				</Grid>
-				<Grid item>
-					{(artistList.length > 0) &&
-						<ArtistList
-							dataArtists={artistList}
-							totalResult={totalResult}
-							showingItems={showingItems}
-							setOffset={setOffset}
-							setEnabledSearch={setEnabledSearch}
-						/>
-					}
-				</Grid>
 			</Grid>
+			{(artistList.length > 0) &&
+				<ArtistList
+					dataArtists={artistList}
+					totalResult={totalResult}
+					showingItems={showingItems}
+					setOffset={setOffset}
+					setEnabledSearch={setEnabledSearch}
+				/>
+			}
 		</Container>
 	)
 }

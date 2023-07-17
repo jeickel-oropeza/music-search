@@ -1,5 +1,6 @@
 :root {
-  --yellow: #D6F379
+  --yellow: #D6F379;
+  --red: #E3513D;
 }
 
 .logo {
@@ -12,8 +13,59 @@
 .page-title {
   display: flex;
   flex-direction: column;
+  font-size: 4rem;
 }
 
 .color-yellow {
   color: var(--yellow);
+}
+
+a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--yellow);
+}
+
+.hoverable-item {
+  cursor: pointer;
+  border-radius: 1.5rem;
+  transition: all 0.2s !important;
+}
+
+.hoverable-item:hover {
+  background-color: var(--yellow) !important;
+  color: #000000 !important;
+}
+
+.logout-icon {
+  display: none;
+}
+
+.image-artist {
+  height: 15rem;
+  border-radius: 50%;
+}
+
+.remove-button {
+  background: var(--red) !important;
+}
+
+.add-button {
+  background: var(--yellow) !important;
+}
+
+@media (max-width: 900px) {
+  .login-logo {
+    height: 20rem;
+    width: 20rem;
+  }
+  .page-title {
+    font-size: 3rem;
+  }
+  .logout-icon {
+    display: block;
+  }
 }

@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
-import { redirect } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export const Authentication = ({ children }) => {
-	console.log('children', children)
-
+	const navigate = useNavigate()
 	const [sessionToken, setSessionToken] = useState(null)
 	const sessionTokenStorage = sessionStorage.getItem('token')
 
@@ -14,11 +13,12 @@ export const Authentication = ({ children }) => {
 			setSessionToken(token)
 			sessionStorage.setItem('token', token)
 			window.location.hash = ''
+			navigate('/')
 		}
 	}, [])
 
-	if (!sessionToken && !sessionTokenStorage) {
-		redirect('/login')
+	if (!sessionTokenStorage) {
+		navigate('/login')
 	}
 
 	return (children)
