@@ -17,7 +17,10 @@ export const Home = () => {
 	let { data: apiResponse, isLoading, isError } = useQuery(
 		`searchArtist${offset}`,
 		async () => await SearchRequest(artistName, offset),
-		{ enabled: enabledSearch }
+		{
+			enabled: enabledSearch,
+			refetchOnMount: true
+		}
 	)
 
 	useEffect(() => {

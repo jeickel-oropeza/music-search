@@ -1,7 +1,9 @@
 import { Grid, Pagination, Typography } from "@mui/material"
 import { ItemList } from "../ItemList"
+import { useNavigate } from "react-router-dom"
 
 export const ArtistList = ({ dataArtists, totalResult, showingItems, setOffset, setEnabledSearch }) => {
+	const navigate = useNavigate()
 	const countPages = Math.ceil(totalResult / showingItems)
 
 	const handlePaginationChange = (e, currentPage) => {
@@ -10,7 +12,7 @@ export const ArtistList = ({ dataArtists, totalResult, showingItems, setOffset, 
 	}
 
 	const handleItemClick = (artistId) => {
-		console.log('artistId', artistId)
+		navigate(`/artist/${artistId}`)
 	}
 
 	return (
@@ -22,7 +24,6 @@ export const ArtistList = ({ dataArtists, totalResult, showingItems, setOffset, 
 				{dataArtists.map(artist => (
 					<ItemList
 						key={artist.id}
-						id={artist.id}
 						title={artist.name}
 						information={`Seguidores: ${artist.followers.total}`}
 						media={(artist.images.length > 0) ? artist.images[0].url : null}

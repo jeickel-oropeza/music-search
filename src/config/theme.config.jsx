@@ -17,6 +17,9 @@ const theme = createTheme({
 		},
 		primary: {
 			main: globalPalette.YELLOW
+		},
+		error: {
+			main: globalPalette.RED
 		}
 	},
 	typography: {
