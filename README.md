@@ -15,6 +15,11 @@ Dirigirse a la carpeta ***/jeickel_oropeza_full-frontend***:
   cd /jeickel_oropeza_full-frontend
 ```
 
+Instalar dependencias con:
+```bash
+  npm install
+```
+
 Dentro del directorio ***/jeickel_oropeza_full-frontend*** ejecutar el siguiente comando:
 ```bash
   npm run dev
